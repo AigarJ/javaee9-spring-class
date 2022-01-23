@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @Slf4j
+
 public class FirstController {
 
     // The same as @Slf4j
@@ -21,5 +22,17 @@ public class FirstController {
         log.info("firstPage() method called!!!");
         //looking for html page inside resources/templates
         return "home-page";
+    }
+    @GetMapping("/my-second-page")
+    public String secondPage() {
+        log.info("secondPage() method called!!!");
+        //looking for html page inside resources/templates
+        return "second-page";
+    }
+
+    @GetMapping("/third-page")
+    public String thirdPage(){
+        log.info("thirdPage() method was called!!!");
+        return "pages/third-page";
     }
 }
