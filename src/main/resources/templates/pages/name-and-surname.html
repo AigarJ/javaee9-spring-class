@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Name and Surname</title>
 </head>
 <body>
+<p th:text="example">fafafafaaffafaaf</p>
 <h2>My name and surname</h2>
-<p>My name is: Aigar </p>
-<p>My surname is: Jurise</p>
+<p>My name is: <span th:text="${myName}">Aigar</span></p>
+<p>My surname is: <span th:text="${mySurname}">Jurise</span></p>
 </body>
 </html>
