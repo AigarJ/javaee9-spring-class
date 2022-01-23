@@ -6,11 +6,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @Slf4j
-
+@RequestMapping("/first")
 public class FirstController {
 
     // The same as @Slf4j
@@ -48,6 +50,12 @@ public class FirstController {
         log.info("my name is: [{}] and my surname is: [{}]", myName, mySurname);
         log.info(String.format("my name is: [%s] and my surname is: [%s]", myName, mySurname));
 
-        return "";
+        return "pages/name-and-surname";
+    }
+
+    @PostMapping ("/my-first-post")
+    public String myFirstOtherThanGetHttpMethod(){
+        log.info("myFirstOtherThanGetHttpMethod() was called");
+        return "pages/post-page";
     }
 }
