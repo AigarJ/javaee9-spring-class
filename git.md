@@ -6,3 +6,5 @@
 
 ### Commands
 - git status - show what's going on in repository - which branch we're on now and if there are any uncommitted changes
+- git log - shows git history
+- git log --graph - shows git history as graph
