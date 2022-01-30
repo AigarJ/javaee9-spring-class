@@ -1,5 +1,5 @@
 ###Git tips
-- Put to repository only files which cannot be recreated by any other tools - dont't put any IDE's files or *class files
+- Put to repository only files which cannot be recreated by any other tools - don't put any IDE's files or *class files
 - Git commit message should be of good quality
 - In order to commit empty folder add .gitkeep file inside 
 - when changing the branch, working tree should be clean
@@ -11,5 +11,5 @@
 - git log - shows git history
 - git log --graph - shows git history as graph
 - git branch - show available branches on my machine
-- git branch -a - show all available branches - on my machine and remote ones (like Github)
+- git branch -a - show all available branches - on my machine and remote ones (like GitHub)
 
