@@ -13,7 +13,7 @@ import java.util.List;
 
 @Controller
 @Slf4j
-@RequestMapping("/person")
+@RequestMapping("/persons")
 public class PersonController {
 
     public static final String PERSONS_KEY = "persons";
@@ -31,5 +31,13 @@ public class PersonController {
 
         data.addAttribute(PERSONS_KEY, persons);
         return "persons/persons-names";
+    }
+
+    @GetMapping("/details")
+    public String showDetailedPersonsList(Model data){
+        var persons = personService.getAllPersons();
+
+        data.addAttribute(PERSONS_KEY, persons);
+        return "persons/details-table";
     }
 }
