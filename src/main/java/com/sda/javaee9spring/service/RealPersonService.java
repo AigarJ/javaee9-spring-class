@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -22,6 +23,17 @@ public class RealPersonService {
 
         var result = personRepository.findAll();
         log.info("Persons entities read from db: {}", result);
+        return result;
+    }
+    public PersonEntity readPersonEntityById(Long id){
+        log.info("read entity by id: [{}]", id);
+
+        Optional<PersonEntity> maybePerson = personRepository.findById(id);
+        PersonEntity result = null;
+        if (maybePerson.isPresent()){
+            result = maybePerson.get();
+        }
+        log.info("found Person entity: [{}]", result);
         return result;
     }
 }
