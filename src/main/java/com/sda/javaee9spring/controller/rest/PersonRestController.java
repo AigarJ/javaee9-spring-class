@@ -3,14 +3,12 @@ package com.sda.javaee9spring.controller.rest;
 
 import com.sda.javaee9spring.entity.PersonEntity;
 import com.sda.javaee9spring.service.RealPersonService;
+import com.sun.xml.bind.v2.TODO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -54,5 +52,18 @@ public class PersonRestController {
 //
 //        return ResponseEntity.ok(personEntity);
 ////        return new ResponseEntity<>(personEntity, null, HttpStatus.OK);
+    }
+
+    // /persons/1 - using DELETE HTTP VERB
+    @DeleteMapping("/persons/{id}")
+    public ResponseEntity<Void> deletePersonEntityById(@PathVariable("id") Long id){
+        log.info("trying to delete person entity by id: [{}]", id);
+
+        boolean deleted = personService.deletePersonEntityById(id);
+        if (deleted) {
+            return ResponseEntity.noContent().build();
+        }
+
+        return ResponseEntity.notFound().build();
     }
 }
