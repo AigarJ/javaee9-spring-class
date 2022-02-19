@@ -25,15 +25,12 @@ public class RealPersonService {
         log.info("Persons entities read from db: {}", result);
         return result;
     }
-    public PersonEntity readPersonEntityById(Long id){
+    public Optional<PersonEntity> readPersonEntityById(Long id){
         log.info("read entity by id: [{}]", id);
 
         Optional<PersonEntity> maybePerson = personRepository.findById(id);
-        PersonEntity result = null;
-        if (maybePerson.isPresent()){
-            result = maybePerson.get();
-        }
-        log.info("found Person entity: [{}]", result);
-        return result;
+
+        log.info("found Person entity: [{}]", maybePerson);
+        return maybePerson;
     }
 }
