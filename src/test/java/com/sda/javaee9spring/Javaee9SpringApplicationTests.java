@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class Javaee9SpringApplicationTests {
 
-    // TODO
+
     @Test
     void contextLoads() {
     }

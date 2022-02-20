@@ -21,6 +21,17 @@ public class ConsoleDemo {
 
         PersonRepository mockRepo = new PersonRepository() {
             @Override
+            public boolean existsByNameAndSurname(String name, String surname) {
+                return false;
+            }
+
+            @Override
+            public boolean checkDuplicates(String name, String surname) {
+                return false;
+            }
+
+
+            @Override
             public List<PersonEntity> findAll() {
                 return Collections.emptyList();
             }
