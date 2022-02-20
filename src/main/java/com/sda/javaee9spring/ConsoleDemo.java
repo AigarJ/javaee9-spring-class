@@ -176,7 +176,7 @@ public class ConsoleDemo {
                 return null;
             }
         };
-        RealPersonService myService = new RealPersonService(mockRepo);
+        RealPersonService myService = new RealPersonService(mockRepo, null);
         myService.readAllPersonEntities();
     }
 }
